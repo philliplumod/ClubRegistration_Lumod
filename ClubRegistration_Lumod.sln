@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubRegistration_Lumod", "ClubRegistration_Lumod.csproj", "{907E3A2D-8829-417B-AE86-F10E9465CBCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{907E3A2D-8829-417B-AE86-F10E9465CBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907E3A2D-8829-417B-AE86-F10E9465CBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907E3A2D-8829-417B-AE86-F10E9465CBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907E3A2D-8829-417B-AE86-F10E9465CBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B116FF84-C0FB-4CB9-ACBF-B98883AD7774}
+	EndGlobalSection
+EndGlobal
