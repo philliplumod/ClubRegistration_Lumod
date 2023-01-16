@@ -1,5 +1,5 @@
 ﻿
-namespace ClubRegistration_Lumod
+namespace ClubRegistrations
 {
     partial class FrmUpdateMember
     {
@@ -38,18 +38,19 @@ namespace ClubRegistration_Lumod
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbProgram = new System.Windows.Forms.ComboBox();
+            this.cbProg = new System.Windows.Forms.ComboBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtAge = new System.Windows.Forms.TextBox();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.cbStudentID = new System.Windows.Forms.ComboBox();
+            this.txtMiddleN = new System.Windows.Forms.TextBox();
+            this.txtFirstN = new System.Windows.Forms.TextBox();
+            this.txtLastN = new System.Windows.Forms.TextBox();
+            this.cbStudID = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -58,13 +59,13 @@ namespace ClubRegistration_Lumod
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cbProgram);
+            this.panel1.Controls.Add(this.cbProg);
             this.panel1.Controls.Add(this.cbGender);
             this.panel1.Controls.Add(this.txtAge);
-            this.panel1.Controls.Add(this.txtMiddleName);
-            this.panel1.Controls.Add(this.txtFirstName);
-            this.panel1.Controls.Add(this.txtLastName);
-            this.panel1.Controls.Add(this.cbStudentID);
+            this.panel1.Controls.Add(this.txtMiddleN);
+            this.panel1.Controls.Add(this.txtFirstN);
+            this.panel1.Controls.Add(this.txtLastN);
+            this.panel1.Controls.Add(this.cbStudID);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -145,17 +146,26 @@ namespace ClubRegistration_Lumod
             this.label1.TabIndex = 22;
             this.label1.Text = "Student ID";
             // 
-            // cbProgram
+            // cbProg
             // 
-            this.cbProgram.FormattingEnabled = true;
-            this.cbProgram.Location = new System.Drawing.Point(12, 459);
-            this.cbProgram.Name = "cbProgram";
-            this.cbProgram.Size = new System.Drawing.Size(241, 27);
-            this.cbProgram.TabIndex = 21;
+            this.cbProg.FormattingEnabled = true;
+            this.cbProg.Items.AddRange(new object[] {
+            "BS in Information Technology (BSIT)",
+            "BS in Business Administration (BSBA)",
+            "BS in Hospitality Management (BSHM)",
+            "BS in Tourism Management (BSTM)"});
+            this.cbProg.Location = new System.Drawing.Point(12, 459);
+            this.cbProg.Name = "cbProg";
+            this.cbProg.Size = new System.Drawing.Size(241, 27);
+            this.cbProg.TabIndex = 21;
             // 
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "LGBT"});
             this.cbGender.Location = new System.Drawing.Point(12, 393);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(189, 27);
@@ -168,39 +178,41 @@ namespace ClubRegistration_Lumod
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(144, 32);
             this.txtAge.TabIndex = 19;
+            this.txtAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAge_KeyPress);
             // 
-            // txtMiddleName
+            // txtMiddleN
             // 
-            this.txtMiddleName.Location = new System.Drawing.Point(12, 251);
-            this.txtMiddleName.Multiline = true;
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(189, 32);
-            this.txtMiddleName.TabIndex = 18;
+            this.txtMiddleN.Location = new System.Drawing.Point(12, 251);
+            this.txtMiddleN.Multiline = true;
+            this.txtMiddleN.Name = "txtMiddleN";
+            this.txtMiddleN.Size = new System.Drawing.Size(189, 32);
+            this.txtMiddleN.TabIndex = 18;
             // 
-            // txtFirstName
+            // txtFirstN
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(12, 180);
-            this.txtFirstName.Multiline = true;
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(189, 32);
-            this.txtFirstName.TabIndex = 17;
+            this.txtFirstN.Location = new System.Drawing.Point(12, 180);
+            this.txtFirstN.Multiline = true;
+            this.txtFirstN.Name = "txtFirstN";
+            this.txtFirstN.Size = new System.Drawing.Size(189, 32);
+            this.txtFirstN.TabIndex = 17;
             // 
-            // txtLastName
+            // txtLastN
             // 
-            this.txtLastName.Location = new System.Drawing.Point(12, 109);
-            this.txtLastName.Multiline = true;
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(189, 32);
-            this.txtLastName.TabIndex = 16;
+            this.txtLastN.Location = new System.Drawing.Point(12, 109);
+            this.txtLastN.Multiline = true;
+            this.txtLastN.Name = "txtLastN";
+            this.txtLastN.Size = new System.Drawing.Size(189, 32);
+            this.txtLastN.TabIndex = 16;
             // 
-            // cbStudentID
+            // cbStudID
             // 
-            this.cbStudentID.FormattingEnabled = true;
-            this.cbStudentID.Location = new System.Drawing.Point(12, 43);
-            this.cbStudentID.Name = "cbStudentID";
-            this.cbStudentID.Size = new System.Drawing.Size(241, 27);
-            this.cbStudentID.TabIndex = 14;
-            this.cbStudentID.SelectedIndexChanged += new System.EventHandler(this.cbStudentID_SelectedIndexChanged);
+            this.cbStudID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStudID.FormattingEnabled = true;
+            this.cbStudID.Location = new System.Drawing.Point(12, 43);
+            this.cbStudID.Name = "cbStudID";
+            this.cbStudID.Size = new System.Drawing.Size(241, 27);
+            this.cbStudID.TabIndex = 14;
+            this.cbStudID.SelectedIndexChanged += new System.EventHandler(this.cbStudentID_SelectedIndexChanged);
             // 
             // FrmUpdateMember
             // 
@@ -226,13 +238,13 @@ namespace ClubRegistration_Lumod
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbProgram;
+        private System.Windows.Forms.ComboBox cbProg;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.TextBox txtAge;
-        private System.Windows.Forms.TextBox txtMiddleName;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.ComboBox cbStudentID;
+        private System.Windows.Forms.TextBox txtMiddleN;
+        private System.Windows.Forms.TextBox txtFirstN;
+        private System.Windows.Forms.TextBox txtLastN;
+        private System.Windows.Forms.ComboBox cbStudID;
         private System.Windows.Forms.Button btnConfirm;
     }
 }

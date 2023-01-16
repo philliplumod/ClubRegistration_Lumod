@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClubRegistration_Lumod
+namespace ClubRegistrations
 {
     public partial class FrmClubRegistration : Form
     {
@@ -26,6 +26,32 @@ namespace ClubRegistration_Lumod
             new FrmUpdateMember().Show();
         }
 
+        private void txtStudentID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) & (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) & (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshListOfClubMembers();
@@ -33,19 +59,28 @@ namespace ClubRegistration_Lumod
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            ID = count;
+            if (string.IsNullOrEmpty(txtFirstN.Text) || string.IsNullOrEmpty(txtMiddleN.Text) || string.IsNullOrEmpty(txtLastN.Text) || string.IsNullOrEmpty(txtAge.Text) || string.IsNullOrEmpty(cbGender.Text) || string.IsNullOrEmpty(cbProg.Text))
+            {
+                MessageBox.Show("FIELDS MUST BE FILL");
+            } else
+            {
+                ID = count;
 
-            StudentID = Convert.ToInt32(txtStudentID.Text);
-            FirstName = txtFirstName.Text;
-            MiddleName = txtMiddleName.Text;
-            LastName = txtLastName.Text;
+                StudentID = Convert.ToInt32(txtStudID.Text);
+                FirstName = txtFirstN.Text;
+                MiddleName = txtMiddleN.Text;
+                LastName = txtLastN.Text;
 
-            Gender = cbGender.Text;
-            Program = cbProgram.Text;
-            Age = Convert.ToInt32(txtAge.Text);
+                Gender = cbGender.Text;
+                Program = cbProg.Text;
+                Age = Convert.ToInt32(txtAge.Text);
 
-            clubRegistrationQuery.RegisterStudent(ID, StudentID, FirstName, MiddleName, LastName, Age, Gender, Program);
-            RegistrationID();
+                clubRegistrationQuery.RegisterStudent(ID, StudentID, FirstName, MiddleName, LastName, Age, Gender, Program);
+                RegistrationID();
+
+                MessageBox.Show("Register Successfuly");
+            }
+
         }
 
         private long StudentID;

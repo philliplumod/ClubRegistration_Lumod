@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{907E3A2D-8829-417B-AE86-F10E9465CBCB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ClubRegistration_Lumod</RootNamespace>
-    <AssemblyName>ClubRegistration_Lumod</AssemblyName>
+    <RootNamespace>Galarrita_Keith_RegistrationWithDB</RootNamespace>
+    <AssemblyName>Galarrita_Keith_RegistrationWithDB</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

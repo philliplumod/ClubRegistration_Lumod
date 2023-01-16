@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ClubRegistration_Lumod
+namespace ClubRegistrations
 {
     class ClassRegistrationQuery
     {
@@ -74,17 +74,17 @@ namespace ClubRegistration_Lumod
             sqlConnect.Close();
         }
 
-        public void UpdateStudent(long StudentID, string FirstName, string MiddleName, string LastName, int Age, string Gender, string Program)
+        public void UpdateStudent(long StudentID, string FirstName, string MiddleName, string LastName, int Age, string Gender, string Programs)
         {
-            sqlCommand = new SqlCommand("UPDATE ClubMembers1 SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Age = @Age, Gender = @Gender, Program = @Program", sqlConnect);
+            sqlCommand = new SqlCommand("UPDATE ClubMembers1 SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Age = @Age, Gender = @Gender, Programs = @Programs WHERE StudentID = @StudentID", sqlConnect);
 
-            sqlCommand.Parameters.Add("@StudentID", SqlDbType.VarChar).Value = StudentID;
+            sqlCommand.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
             sqlCommand.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName;
             sqlCommand.Parameters.Add("@MiddleName", SqlDbType.VarChar).Value = MiddleName;
             sqlCommand.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName;
             sqlCommand.Parameters.Add("@Age", SqlDbType.Int).Value = Age;
             sqlCommand.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
-            sqlCommand.Parameters.Add("@Programs", SqlDbType.VarChar).Value = Program;
+            sqlCommand.Parameters.Add("@Programs", SqlDbType.VarChar).Value = Programs;
             sqlConnect.Open();
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
